@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A51C9F351FDDB82700DC38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C9F341FDDB82700DC38F2 /* AppDelegate.swift */; };
+		A51C9F371FDDB82700DC38F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C9F361FDDB82700DC38F2 /* ViewController.swift */; };
+		A51C9F3A1FDDB82700DC38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51C9F381FDDB82700DC38F2 /* Main.storyboard */; };
+		A51C9F3C1FDDB82700DC38F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */; };
+		A51C9F3F1FDDB82700DC38F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */; };
+		A51C9F4A1FDDB82800DC38F2 /* DoodleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A51C9F461FDDB82800DC38F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A51C9F291FDDB82700DC38F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A51C9F301FDDB82700DC38F2;
+			remoteInfo = DoodleWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A51C9F311FDDB82700DC38F2 /* DoodleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51C9F341FDDB82700DC38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A51C9F361FDDB82700DC38F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A51C9F391FDDB82700DC38F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A51C9F3E1FDDB82700DC38F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A51C9F401FDDB82800DC38F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51C9F451FDDB82800DC38F2 /* DoodleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoodleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleWeatherTests.swift; sourceTree = "<group>"; };
+		A51C9F4B1FDDB82800DC38F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A51C9F2E1FDDB82700DC38F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A51C9F421FDDB82800DC38F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A51C9F281FDDB82700DC38F2 = {
+			isa = PBXGroup;
+			children = (
+				A51C9F331FDDB82700DC38F2 /* DoodleWeather */,
+				A51C9F481FDDB82800DC38F2 /* DoodleWeatherTests */,
+				A51C9F321FDDB82700DC38F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A51C9F321FDDB82700DC38F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A51C9F311FDDB82700DC38F2 /* DoodleWeather.app */,
+				A51C9F451FDDB82800DC38F2 /* DoodleWeatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A51C9F331FDDB82700DC38F2 /* DoodleWeather */ = {
+			isa = PBXGroup;
+			children = (
+				A51C9F341FDDB82700DC38F2 /* AppDelegate.swift */,
+				A51C9F361FDDB82700DC38F2 /* ViewController.swift */,
+				A51C9F381FDDB82700DC38F2 /* Main.storyboard */,
+				A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */,
+				A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */,
+				A51C9F401FDDB82800DC38F2 /* Info.plist */,
+			);
+			path = DoodleWeather;
+			sourceTree = "<group>";
+		};
+		A51C9F481FDDB82800DC38F2 /* DoodleWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */,
+				A51C9F4B1FDDB82800DC38F2 /* Info.plist */,
+			);
+			path = DoodleWeatherTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A51C9F301FDDB82700DC38F2 /* DoodleWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51C9F4E1FDDB82800DC38F2 /* Build configuration list for PBXNativeTarget "DoodleWeather" */;
+			buildPhases = (
+				A51C9F2D1FDDB82700DC38F2 /* Sources */,
+				A51C9F2E1FDDB82700DC38F2 /* Frameworks */,
+				A51C9F2F1FDDB82700DC38F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoodleWeather;
+			productName = DoodleWeather;
+			productReference = A51C9F311FDDB82700DC38F2 /* DoodleWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A51C9F441FDDB82800DC38F2 /* DoodleWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51C9F511FDDB82800DC38F2 /* Build configuration list for PBXNativeTarget "DoodleWeatherTests" */;
+			buildPhases = (
+				A51C9F411FDDB82800DC38F2 /* Sources */,
+				A51C9F421FDDB82800DC38F2 /* Frameworks */,
+				A51C9F431FDDB82800DC38F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A51C9F471FDDB82800DC38F2 /* PBXTargetDependency */,
+			);
+			name = DoodleWeatherTests;
+			productName = DoodleWeatherTests;
+			productReference = A51C9F451FDDB82800DC38F2 /* DoodleWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A51C9F291FDDB82700DC38F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Сергей Морозов";
+				TargetAttributes = {
+					A51C9F301FDDB82700DC38F2 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					A51C9F441FDDB82800DC38F2 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A51C9F301FDDB82700DC38F2;
+					};
+				};
+			};
+			buildConfigurationList = A51C9F2C1FDDB82700DC38F2 /* Build configuration list for PBXProject "DoodleWeather" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A51C9F281FDDB82700DC38F2;
+			productRefGroup = A51C9F321FDDB82700DC38F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A51C9F301FDDB82700DC38F2 /* DoodleWeather */,
+				A51C9F441FDDB82800DC38F2 /* DoodleWeatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A51C9F2F1FDDB82700DC38F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51C9F3F1FDDB82700DC38F2 /* LaunchScreen.storyboard in Resources */,
+				A51C9F3C1FDDB82700DC38F2 /* Assets.xcassets in Resources */,
+				A51C9F3A1FDDB82700DC38F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A51C9F431FDDB82800DC38F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A51C9F2D1FDDB82700DC38F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51C9F371FDDB82700DC38F2 /* ViewController.swift in Sources */,
+				A51C9F351FDDB82700DC38F2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A51C9F411FDDB82800DC38F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51C9F4A1FDDB82800DC38F2 /* DoodleWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A51C9F471FDDB82800DC38F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A51C9F301FDDB82700DC38F2 /* DoodleWeather */;
+			targetProxy = A51C9F461FDDB82800DC38F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A51C9F381FDDB82700DC38F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51C9F391FDDB82700DC38F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51C9F3E1FDDB82700DC38F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A51C9F4C1FDDB82800DC38F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A51C9F4D1FDDB82800DC38F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A51C9F4F1FDDB82800DC38F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W28ZX6NAP3;
+				INFOPLIST_FILE = DoodleWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mytests.DoodleWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A51C9F501FDDB82800DC38F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W28ZX6NAP3;
+				INFOPLIST_FILE = DoodleWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mytests.DoodleWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A51C9F521FDDB82800DC38F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W28ZX6NAP3;
+				INFOPLIST_FILE = DoodleWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mytests.DoodleWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoodleWeather.app/DoodleWeather";
+			};
+			name = Debug;
+		};
+		A51C9F531FDDB82800DC38F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W28ZX6NAP3;
+				INFOPLIST_FILE = DoodleWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mytests.DoodleWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoodleWeather.app/DoodleWeather";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A51C9F2C1FDDB82700DC38F2 /* Build configuration list for PBXProject "DoodleWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51C9F4C1FDDB82800DC38F2 /* Debug */,
+				A51C9F4D1FDDB82800DC38F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51C9F4E1FDDB82800DC38F2 /* Build configuration list for PBXNativeTarget "DoodleWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51C9F4F1FDDB82800DC38F2 /* Debug */,
+				A51C9F501FDDB82800DC38F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51C9F511FDDB82800DC38F2 /* Build configuration list for PBXNativeTarget "DoodleWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51C9F521FDDB82800DC38F2 /* Debug */,
+				A51C9F531FDDB82800DC38F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A51C9F291FDDB82700DC38F2 /* Project object */;
+}
