@@ -13,6 +13,8 @@
 		A51C9F3C1FDDB82700DC38F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */; };
 		A51C9F3F1FDDB82700DC38F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */; };
 		A51C9F4A1FDDB82800DC38F2 /* DoodleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */; };
+		A5B9F9F71FE3F648005B3978 /* UrlEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9F9F61FE3F648005B3978 /* UrlEncoder.swift */; };
+		A5B9F9F91FE3F88F005B3978 /* UrlEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9F9F81FE3F88F005B3978 /* UrlEncoderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		A51C9F451FDDB82800DC38F2 /* DoodleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoodleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleWeatherTests.swift; sourceTree = "<group>"; };
 		A51C9F4B1FDDB82800DC38F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B9F9F61FE3F648005B3978 /* UrlEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlEncoder.swift; sourceTree = "<group>"; };
+		A5B9F9F81FE3F88F005B3978 /* UrlEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlEncoderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */,
 				A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */,
 				A51C9F401FDDB82800DC38F2 /* Info.plist */,
+				A5B9F9F61FE3F648005B3978 /* UrlEncoder.swift */,
 			);
 			path = DoodleWeather;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			children = (
 				A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */,
 				A51C9F4B1FDDB82800DC38F2 /* Info.plist */,
+				A5B9F9F81FE3F88F005B3978 /* UrlEncoderTests.swift */,
 			);
 			path = DoodleWeatherTests;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51C9F371FDDB82700DC38F2 /* ViewController.swift in Sources */,
+				A5B9F9F71FE3F648005B3978 /* UrlEncoder.swift in Sources */,
 				A51C9F351FDDB82700DC38F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B9F9F91FE3F88F005B3978 /* UrlEncoderTests.swift in Sources */,
 				A51C9F4A1FDDB82800DC38F2 /* DoodleWeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

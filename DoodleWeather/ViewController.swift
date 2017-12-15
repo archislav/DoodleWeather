@@ -49,8 +49,8 @@ class ViewController: UIViewController {
         // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         
         
-        let parameters: [String: Any] = [
-            "q": "select item.condition from weather.forecast where woeid=2122265",
+        let parameters: [String: String] = [
+            "q": "select item.condition from weather.forecast where woeid=2122265 and u='c'",
             "format": "json"
         ]
         
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-        let postString = "q=select+item.condition+from+weather.forecast+where+woeid%3D2122265+and+u+%3D+%27c%27&format=json" // todo: create from params
+        let postString = createPostBodyUrlencodedString(for: parameters)
         request.httpBody = postString.data(using: .utf8)
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -120,6 +120,24 @@ class ViewController: UIViewController {
         }
         
         return currJson[field] as! String
+    }
+    
+    func createPostBodyUrlencodedString(for paramteres: [String:String]) -> String {
+//        return "q=select+item.condition+from+weather.forecast+where+woeid%3D2122265+and+u+%3D+%27c%27&format=json"
+        let urlEncoder = UrlEncoder()
+        var keyValuePairs: [String] = []
+        
+        for (key, value) in paramteres {
+            let urlEncodedValue = urlEncoder.urlEncode(value)
+            let keyValuePair = "\(key)=\(urlEncodedValue)"
+            keyValuePairs.append(keyValuePair)
+            print("keyValuePair: \(keyValuePair)")
+        }
+        
+        let joinedKeyValuePairs = keyValuePairs.joined(separator: "&")
+        print("joinedKeyValuePairs: \(joinedKeyValuePairs)")
+        
+        return joinedKeyValuePairs
     }
     
 }
