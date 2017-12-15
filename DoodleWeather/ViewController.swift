@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var weatherText: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var weatherDesctiptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressGetWeather(_ sender: Any) {
-        self.weatherText?.text = "..."
+        self.degreeLabel?.text = "..."
+        self.weatherDesctiptionLabel?.text = "..."
         requestTemperature()
     }
     
@@ -70,7 +72,7 @@ class ViewController: UIViewController {
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-        let postString = "q=select+item.condition+from+weather.forecast+where+woeid%3D2122265%0D%0A&format=json" // todo: create from params
+        let postString = "q=select+item.condition+from+weather.forecast+where+woeid%3D2122265+and+u+%3D+%27c%27&format=json" // todo: create from params
         request.httpBody = postString.data(using: .utf8)
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -87,9 +89,11 @@ class ViewController: UIViewController {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
                     let temp = self.getIntFromJson(json, ["query", "results", "channel", "item", "condition"], "temp")
+                    let description = self.getStringFromJson(json, ["query", "results", "channel", "item", "condition"], "text")
                     
                     DispatchQueue.main.async {
-                        self.weatherText?.text = "\(temp) F"
+                        self.degreeLabel?.text = "\(temp)° C"
+                        self.weatherDesctiptionLabel?.text = "\(description)"
                     }
                 }
             } catch let error {
@@ -107,6 +111,15 @@ class ViewController: UIViewController {
         }
         
         return Int(currJson[field] as! String)!
+    }
+    
+    func getStringFromJson(_ json: [String: Any], _ path: [String], _ field: String) -> String {
+        var currJson : [String: Any] = json
+        for pathField in path {
+            currJson = currJson[pathField] as! [String: Any]
+        }
+        
+        return currJson[field] as! String
     }
     
 }

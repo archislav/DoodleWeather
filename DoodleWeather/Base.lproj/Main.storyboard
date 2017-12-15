@@ -17,22 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-O9-ebw">
-                                <rect key="frame" x="160" y="50" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-O9-ebw" userLabel="DegreeLabel">
+                                <rect key="frame" x="152" y="50" width="16" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q5-7o-tHJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q5-7o-tHJ" userLabel="GetWeatherButton">
                                 <rect key="frame" x="116.5" y="488" width="87" height="30"/>
                                 <state key="normal" title="Get Weather"/>
                                 <connections>
                                     <action selector="pressGetWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJ4-F8-mRH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-jm-r5B" userLabel="WeatherDescriptionLabel">
+                                <rect key="frame" x="152.5" y="119" width="16" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vHD-jm-r5B" firstAttribute="top" secondItem="vxZ-O9-ebw" secondAttribute="bottom" constant="40" id="6Qi-rz-3Lt"/>
+                            <constraint firstItem="vHD-jm-r5B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DR7-W4-Jnq"/>
                             <constraint firstItem="vxZ-O9-ebw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="IPS-FG-Ag5"/>
                             <constraint firstItem="vxZ-O9-ebw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ioM-c9-xXY"/>
                             <constraint firstItem="8Q5-7o-tHJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lh2-hU-a55"/>
@@ -41,7 +49,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="weatherText" destination="vxZ-O9-ebw" id="06v-ZN-w1j"/>
+                        <outlet property="degreeLabel" destination="vxZ-O9-ebw" id="06v-ZN-w1j"/>
+                        <outlet property="weatherDesctiptionLabel" destination="vHD-jm-r5B" id="niw-au-sph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
