@@ -14,6 +14,8 @@ enum WeatherType {
     case rain
     case unknown
     
+    static let IMAGE_NAME_UNKNOWN = "unknown"
+    
     static let CODE_TO_TYPE: [Int:WeatherType] = [
         26:cloudy,
         27:cloudy,
@@ -45,12 +47,12 @@ enum WeatherType {
         return CODE_TO_TYPE[code] ?? unknown
     }
     
-    func getImageName() -> String? {
+    func getImageName() -> String {
         switch self {
         case .cloudy:
             return "cloud"
         default:
-            return nil
+            return WeatherType.IMAGE_NAME_UNKNOWN
         }
     }
     

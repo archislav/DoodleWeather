@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var weatherDesctiptionLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     let weatherService = WeatherService.shared
     
@@ -26,13 +27,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressGetWeather(_ sender: Any) {
-        self.degreeLabel?.text = "..."
-        self.weatherDesctiptionLabel?.text = "..."
+        clearWeatherConditions()
         weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, callback: {
             (weatherConditions) in
-            self.degreeLabel?.text = "\(weatherConditions.temperature)° C"
-            self.weatherDesctiptionLabel?.text = "\(weatherConditions.description)"
+            self.setWeatherConditions(weatherConditions)
         })
+    }
+    
+    private func setWeatherConditions(_ weatherConditions: WeatherConditions) {
+        setWeatherConditionsComponents(degreeText: "\(weatherConditions.temperature)° C",
+            weatherDescription: weatherConditions.description,
+            imageName: weatherConditions.type.getImageName())
+    }
+    
+    private func clearWeatherConditions() {
+        setWeatherConditionsComponents(degreeText: "...", weatherDescription: "...", imageName: WeatherType.IMAGE_NAME_UNKNOWN)
+    }
+    
+    private func setWeatherConditionsComponents(degreeText: String, weatherDescription: String, imageName: String) {
+        self.degreeLabel?.text = degreeText
+        self.weatherDesctiptionLabel?.text = weatherDescription
+        self.imageView?.image = UIImage(named: imageName)
     }
 }
 

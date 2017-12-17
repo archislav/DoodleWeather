@@ -38,7 +38,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="c2z-f7-eXR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknown" translatesAutoresizingMaskIntoConstraints="NO" id="c2z-f7-eXR" userLabel="ImageView">
                                 <rect key="frame" x="16" y="30" width="288" height="284"/>
                             </imageView>
                         </subviews>
@@ -59,6 +59,7 @@
                     </view>
                     <connections>
                         <outlet property="degreeLabel" destination="vxZ-O9-ebw" id="06v-ZN-w1j"/>
+                        <outlet property="imageView" destination="c2z-f7-eXR" id="QBB-0T-a85"/>
                         <outlet property="weatherDesctiptionLabel" destination="vHD-jm-r5B" id="niw-au-sph"/>
                     </connections>
                 </viewController>
@@ -68,6 +69,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud" width="479" height="341"/>
+        <image name="unknown" width="156" height="200"/>
     </resources>
 </document>
