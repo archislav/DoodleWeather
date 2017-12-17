@@ -66,9 +66,12 @@ class WeatherService {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
-                    let temp = self.getIntFromJson(json, ["query", "results", "channel", "item", "condition"], "temp")
-                    let description = self.getStringFromJson(json, ["query", "results", "channel", "item", "condition"], "text")
-                    let code = self.getIntFromJson(json, ["query", "results", "channel", "item", "condition"], "code")
+                    
+                    let conditionPath: [String] = ["query", "results", "channel", "item", "condition"]
+                    
+                    let temp = self.getIntFromJson(json, conditionPath, "temp")
+                    let description = self.getStringFromJson(json, conditionPath, "text")
+                    let code = self.getIntFromJson(json, conditionPath, "code")
                     
                     let weatherConditions = WeatherConditions(type: WeatherType.fromCode(code), temperature: temp, description: description)
                     
