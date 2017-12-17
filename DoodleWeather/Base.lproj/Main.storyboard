@@ -4,7 +4,9 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,33 +20,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-O9-ebw" userLabel="DegreeLabel">
-                                <rect key="frame" x="152" y="50" width="16" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="135.5" y="334" width="49.5" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q5-7o-tHJ" userLabel="GetWeatherButton">
-                                <rect key="frame" x="116.5" y="488" width="87" height="30"/>
-                                <state key="normal" title="Get Weather"/>
+                                <rect key="frame" x="121.5" y="518" width="77" height="30"/>
+                                <state key="normal" title="Ask Yahoo!"/>
                                 <connections>
                                     <action selector="pressGetWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJ4-F8-mRH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-jm-r5B" userLabel="WeatherDescriptionLabel">
-                                <rect key="frame" x="152.5" y="119" width="16" height="29"/>
+                                <rect key="frame" x="152.5" y="469.5" width="16" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="c2z-f7-eXR">
+                                <rect key="frame" x="16" y="30" width="288" height="284"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="537-d7-qa3"/>
                             <constraint firstItem="vHD-jm-r5B" firstAttribute="top" secondItem="vxZ-O9-ebw" secondAttribute="bottom" constant="40" id="6Qi-rz-3Lt"/>
                             <constraint firstItem="vHD-jm-r5B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DR7-W4-Jnq"/>
-                            <constraint firstItem="vxZ-O9-ebw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="IPS-FG-Ag5"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="IHa-u2-lDW"/>
+                            <constraint firstItem="vxZ-O9-ebw" firstAttribute="top" secondItem="c2z-f7-eXR" secondAttribute="bottom" constant="20" id="avo-0B-19D"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTc-Xs-C4L"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ifF-g4-od4"/>
                             <constraint firstItem="vxZ-O9-ebw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ioM-c9-xXY"/>
                             <constraint firstItem="8Q5-7o-tHJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lh2-hU-a55"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Q5-7o-tHJ" secondAttribute="bottom" constant="50" id="pVd-dq-JSJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Q5-7o-tHJ" secondAttribute="bottom" constant="20" id="pVd-dq-JSJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -58,4 +67,7 @@
             <point key="canvasLocation" x="33.75" y="30.633802816901408"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud" width="479" height="341"/>
+    </resources>
 </document>
