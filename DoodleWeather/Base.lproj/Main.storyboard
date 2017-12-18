@@ -15,7 +15,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoodleWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -25,15 +25,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q5-7o-tHJ" userLabel="GetWeatherButton">
-                                <rect key="frame" x="121.5" y="518" width="77" height="30"/>
-                                <state key="normal" title="Ask Yahoo!"/>
-                                <connections>
-                                    <action selector="pressGetWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJ4-F8-mRH"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-jm-r5B" userLabel="WeatherDescriptionLabel">
-                                <rect key="frame" x="152.5" y="469.5" width="16" height="29"/>
+                                <rect key="frame" x="152.5" y="519" width="16" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,22 +37,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vHD-jm-r5B" secondAttribute="bottom" constant="20" id="28r-1c-uEQ"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="537-d7-qa3"/>
-                            <constraint firstItem="vHD-jm-r5B" firstAttribute="top" secondItem="vxZ-O9-ebw" secondAttribute="bottom" constant="40" id="6Qi-rz-3Lt"/>
                             <constraint firstItem="vHD-jm-r5B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DR7-W4-Jnq"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="IHa-u2-lDW"/>
                             <constraint firstItem="vxZ-O9-ebw" firstAttribute="top" secondItem="c2z-f7-eXR" secondAttribute="bottom" constant="20" id="avo-0B-19D"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTc-Xs-C4L"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ifF-g4-od4"/>
                             <constraint firstItem="vxZ-O9-ebw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ioM-c9-xXY"/>
-                            <constraint firstItem="8Q5-7o-tHJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lh2-hU-a55"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Q5-7o-tHJ" secondAttribute="bottom" constant="20" id="pVd-dq-JSJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="degreeLabel" destination="vxZ-O9-ebw" id="06v-ZN-w1j"/>
                         <outlet property="imageView" destination="c2z-f7-eXR" id="QBB-0T-a85"/>
+                        <outlet property="scrollView" destination="8bC-Xf-vdC" id="0dH-nP-lVR"/>
                         <outlet property="weatherDesctiptionLabel" destination="vHD-jm-r5B" id="niw-au-sph"/>
                     </connections>
                 </viewController>

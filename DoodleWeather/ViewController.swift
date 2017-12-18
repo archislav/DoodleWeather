@@ -14,11 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDesctiptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet var scrollView: UIScrollView!
+    var refreshControl: UIRefreshControl!
+    
     let weatherService = WeatherService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Asking Yahoo...")
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(sender:)), for: UIControlEvents.valueChanged)
+        scrollView.refreshControl = refreshControl
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,13 +33,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func pressGetWeather(_ sender: Any) {
+    @objc func didPullToRefresh(sender: AnyObject){
         clearWeatherConditions()
-        weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, callback: {
+        weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
+            (weatherConditions) in
+            self.refreshControl.endRefreshing()
+            self.setWeatherConditions(weatherConditions)
+        })
+        //        refreshControl.endRefreshing() // todo: сделать, чтобы всегда завершался 
+    }
+    
+    /*@IBAction func pressGetWeather(_ sender: Any) {
+        clearWeatherConditions()
+        weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
             (weatherConditions) in
             self.setWeatherConditions(weatherConditions)
         })
-    }
+    }*/
     
     private func setWeatherConditions(_ weatherConditions: WeatherConditions) {
         setWeatherConditionsComponents(degreeText: "\(weatherConditions.temperature)° C",

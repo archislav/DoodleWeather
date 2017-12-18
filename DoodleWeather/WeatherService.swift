@@ -23,7 +23,7 @@ class WeatherService {
      callback(a)
      }*/
     
-    func requestWeatherConditions(woeid: Int, callback: @escaping (WeatherConditions) -> ()) {
+    func requestWeatherConditions(woeid: Int, successCallback: @escaping (WeatherConditions) -> ()) {
         // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         
         
@@ -55,17 +55,21 @@ class WeatherService {
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
+            // todo: check response code
+            
             guard error == nil else {
+                print("Got error on request: \(error)")
                 return
             }
             
             guard let data = data else {
+                print("Got empty data on request")
                 return
             }
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
+                    print("Response body: \(json)")
                     
                     let conditionPath: [String] = ["query", "results", "channel", "item", "condition"]
                     
@@ -76,11 +80,11 @@ class WeatherService {
                     let weatherConditions = WeatherConditions(type: WeatherType.fromCode(code), temperature: temp, description: description)
                     
                     DispatchQueue.main.async {
-                        callback(weatherConditions)
+                        successCallback(weatherConditions)
                     }
                 }
             } catch let error {
-                print(error.localizedDescription)
+                print("Error on response parsing: \(error.localizedDescription)")
                 return
             }
         })
