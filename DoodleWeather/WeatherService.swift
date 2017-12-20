@@ -55,11 +55,17 @@ class WeatherService {
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
-            // todo: check response code
-            
             guard error == nil else {
                 print("Got error on request: \(error)")
                 return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                let statusCode = httpResponse.statusCode
+                guard statusCode == 200 else {
+                    print("Got response status code: \(statusCode)")
+                    return
+                }
             }
             
             guard let data = data else {
