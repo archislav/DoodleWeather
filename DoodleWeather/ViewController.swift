@@ -37,10 +37,10 @@ class ViewController: UIViewController {
         clearWeatherConditions()
         weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
             (weatherConditions) in
-            self.refreshControl.endRefreshing()
             self.setWeatherConditions(weatherConditions)
+        }, finalizeCallback: {
+            self.refreshControl.endRefreshing()
         })
-        //        refreshControl.endRefreshing() // todo: сделать, чтобы всегда завершался 
     }
     
     /*@IBAction func pressGetWeather(_ sender: Any) {
