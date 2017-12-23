@@ -29,14 +29,10 @@ class WeatherService {
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if let weatherConditions = self.handleWeatherConditionsResponse(data, response, error) {
-                DispatchQueue.main.async {
-                    successCallback(weatherConditions)
-                }
+                successCallback(weatherConditions)
             }
             
-            DispatchQueue.main.async {
-                finalizeCallback()
-            }
+            finalizeCallback()
         })
         task.resume()
     }

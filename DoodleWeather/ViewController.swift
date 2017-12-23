@@ -37,19 +37,23 @@ class ViewController: UIViewController {
         clearWeatherConditions()
         weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
             (weatherConditions) in
-            self.setWeatherConditions(weatherConditions)
+            DispatchQueue.main.async {
+                self.setWeatherConditions(weatherConditions)
+            }
         }, finalizeCallback: {
-            self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
         })
     }
     
     /*@IBAction func pressGetWeather(_ sender: Any) {
-        clearWeatherConditions()
-        weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
-            (weatherConditions) in
-            self.setWeatherConditions(weatherConditions)
-        })
-    }*/
+     clearWeatherConditions()
+     weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
+     (weatherConditions) in
+     self.setWeatherConditions(weatherConditions)
+     })
+     }*/
     
     private func setWeatherConditions(_ weatherConditions: WeatherConditions) {
         setWeatherConditionsComponents(degreeText: "\(weatherConditions.temperature)° C",
