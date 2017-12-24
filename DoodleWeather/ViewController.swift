@@ -7,25 +7,55 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    // MARK: UI components
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var weatherDesctiptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!
     var refreshControl: UIRefreshControl!
     
+    // MARK: services
     let weatherService = WeatherService.shared
+    let locationManager = CLLocationManager()
+    
+    // MARK: current coordinate
+    var currentCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Asking Yahoo...")
-        refreshControl.addTarget(self, action: #selector(didPullToRefresh(sender:)), for: UIControlEvents.valueChanged)
-        scrollView.refreshControl = refreshControl
+        setupPullToRefresh()
+        setupLocationManager()
+    }
+    
+    fileprivate func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("didChangeAuthorization: \(status.rawValue)")
+        guard status == CLAuthorizationStatus.authorizedWhenInUse else {
+            return
+        }
+        
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateLocations")
+        let location = locations[0]
+        let lat = location.coordinate.latitude
+        let lon = location.coordinate.longitude
+        
+        print("lat: \(lat), lon: \(lon)")
+        
+        currentCoordinate = location.coordinate 
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +99,13 @@ class ViewController: UIViewController {
         self.degreeLabel?.text = degreeText
         self.weatherDesctiptionLabel?.text = weatherDescription
         self.imageView?.image = UIImage(named: imageName)
+    }
+    
+    fileprivate func setupPullToRefresh() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Asking Yahoo...")
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(sender:)), for: UIControlEvents.valueChanged)
+        scrollView.refreshControl = refreshControl
     }
 }
 
