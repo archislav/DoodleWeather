@@ -65,16 +65,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @objc func didPullToRefresh(sender: AnyObject){
         clearWeatherConditions()
-        weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: {
+        let successCallback: (WeatherConditions) -> () = {
             (weatherConditions) in
             DispatchQueue.main.async {
                 self.setWeatherConditions(weatherConditions)
             }
-        }, finalizeCallback: {
+        }
+        let finalizeCallback: () -> () = {
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
             }
-        })
+        }
+        
+        if let coordinate = currentCoordinate {
+            weatherService.requestWeatherConditions(latitude: coordinate.latitude, longitude: coordinate.longitude ,successCallback: successCallback, finalizeCallback: finalizeCallback)
+        } else {
+            weatherService.requestWeatherConditions(woeid: WeatherService.MOSCOW_WOEID, successCallback: successCallback, finalizeCallback: finalizeCallback)
+        }
     }
     
     /*@IBAction func pressGetWeather(_ sender: Any) {

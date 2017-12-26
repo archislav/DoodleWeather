@@ -1,4 +1,4 @@
-//
+	//
 //  WeatherService.swift
 //  DoodleWeather
 //
@@ -27,6 +27,17 @@ class WeatherService {
         // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         let request = createWeatherConditionsRequest(for: woeid)
         
+        doRequestWeatherConditions(request, successCallback, finalizeCallback)
+    }
+    
+    func requestWeatherConditions(latitude: Double, longitude: Double, successCallback: @escaping (WeatherConditions) -> (), finalizeCallback: @escaping () -> ()) {
+        // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
+        let request = createWeatherConditionsRequest(latitude: latitude, longitude: longitude)
+        
+        doRequestWeatherConditions(request, successCallback, finalizeCallback)
+    }
+    
+    fileprivate func doRequestWeatherConditions(_ request: URLRequest, _ successCallback: @escaping (WeatherConditions) -> (), _ finalizeCallback: @escaping () -> ()) {
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if let weatherConditions = self.handleWeatherConditionsResponse(data, response, error) {
                 successCallback(weatherConditions)
@@ -37,7 +48,7 @@ class WeatherService {
         task.resume()
     }
     
-    func getIntFromJson(_ json: [String: Any], _ path: [String], _ field: String) -> Int {
+    private func getIntFromJson(_ json: [String: Any], _ path: [String], _ field: String) -> Int {
         var currJson : [String: Any] = json
         for pathField in path {
             currJson = currJson[pathField] as! [String: Any]
@@ -73,9 +84,17 @@ class WeatherService {
         return joinedKeyValuePairs
     }
     
+    private func createWeatherConditionsRequest(latitude: Double, longitude: Double) -> URLRequest {
+        return doCreateWeatherConditionsRequest(woeidWhereConditionString: "woeid in (SELECT woeid FROM geo.places WHERE text=\"(\(latitude), \(longitude))\")")
+    }
+    
     private func createWeatherConditionsRequest(for woeid: Int) -> URLRequest {
+        return doCreateWeatherConditionsRequest(woeidWhereConditionString: "woeid = \(woeid)")
+    }
+    
+    private func doCreateWeatherConditionsRequest(woeidWhereConditionString: String) -> URLRequest {
         let parameters: [String: String] = [
-            "q": "select item.condition from weather.forecast where woeid=\(woeid) and u='c'",
+            "q": "select item.condition from weather.forecast where \(woeidWhereConditionString) and u='c'",
             "format": "json"
         ]
         
