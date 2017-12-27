@@ -99,7 +99,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func clearWeatherConditions() {
-        setWeatherConditionsComponents(degreeText: "...", weatherDescription: "...", imageName: WeatherType.IMAGE_NAME_UNKNOWN)
+        setWeatherConditionsComponents(degreeText: "", weatherDescription: "", imageName: WeatherType.IMAGE_NAME_UNKNOWN)
     }
     
     private func setWeatherConditionsComponents(degreeText: String, weatherDescription: String, imageName: String) {
