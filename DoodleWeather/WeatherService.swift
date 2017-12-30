@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 class WeatherService {
     
@@ -75,11 +76,11 @@ class WeatherService {
             let urlEncodedValue = urlEncoder.urlEncode(value)
             let keyValuePair = "\(key)=\(urlEncodedValue)"
             keyValuePairs.append(keyValuePair)
-            print("keyValuePair: \(keyValuePair)")
+            os_log("keyValuePair: %@", keyValuePair)
         }
         
         let joinedKeyValuePairs = keyValuePairs.joined(separator: "&")
-        print("joinedKeyValuePairs: \(joinedKeyValuePairs)")
+        os_log("joinedKeyValuePairs: %@", joinedKeyValuePairs)
         
         return joinedKeyValuePairs
     }
@@ -122,26 +123,26 @@ class WeatherService {
     
     private func handleWeatherConditionsResponse(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> WeatherConditions? {
         guard error == nil else {
-            print("Got error on request: \(error)")
+            os_log("Got error on request: %@", type: .error, error.debugDescription)
             return nil
         }
         
         if let httpResponse = response as? HTTPURLResponse {
             let statusCode = httpResponse.statusCode
             guard statusCode == 200 else {
-                print("Got response status code: \(statusCode)")
+                os_log("Got response status code: %d", type: .error, statusCode)
                 return nil
             }
         }
         
         guard let data = data else {
-            print("Got empty data on request")
+            os_log("Got empty data on request", type: .error)
             return nil
         }
         
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
-            print("Response body: \(json)")
+            os_log("Response body: %@", json)
             
             let conditionPath: [String] = ["query", "results", "channel", "item", "condition"]
             
@@ -153,7 +154,7 @@ class WeatherService {
             
             return weatherConditions
         } catch let error {
-            print("Error on response parsing: \(error.localizedDescription)")
+            os_log("Error on response parsing: %@", type: .error, error.localizedDescription)
             return nil
         }
     }

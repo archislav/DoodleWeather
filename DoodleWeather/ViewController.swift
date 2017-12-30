@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreLocation
+import os.log
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let LOG = OSLog(subsystem: "my.tests", category: "ViewController") // just to try
     
     // MARK: UI components
     @IBOutlet weak var degreeLabel: UILabel!
@@ -39,7 +42,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("didChangeAuthorization: \(status.rawValue)")
+        //        print("didChangeAuthorization: \(status.rawValue)")
+        os_log("didChangeAuthorization: %d", log: LOG, type: OSLogType.info, status.rawValue)
         guard status == CLAuthorizationStatus.authorizedWhenInUse else {
             return
         }
@@ -48,12 +52,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations")
         let location = locations[0]
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
         
-        print("lat: \(lat), lon: \(lon)")
+        os_log("didUpdateLocations - lat: %f, lon: %f", lat, lon)
         
         currentCoordinate = location.coordinate 
     }
