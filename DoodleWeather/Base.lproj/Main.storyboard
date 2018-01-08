@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Yk-1j-Vfq" userLabel="WeatherInfo StackView">
-                                <rect key="frame" x="16" y="302.5" width="288.5" height="255.5"/>
+                                <rect key="frame" x="16" y="302.5" width="288" height="255.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-O9-ebw" userLabel="DegreeLabel">
                                         <rect key="frame" x="119.5" y="0.0" width="49.5" height="216.5"/>
@@ -29,7 +29,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-jm-r5B" userLabel="WeatherDescriptionLabel">
-                                        <rect key="frame" x="136.5" y="226.5" width="16" height="29"/>
+                                        <rect key="frame" x="136" y="226.5" width="16" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,16 +42,52 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9Yk-1j-Vfq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="38w-cA-wUp"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="537-d7-qa3"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6NW-ae-QYK"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.9" id="70L-ld-tC0"/>
+                            <constraint firstItem="9Yk-1j-Vfq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.9" id="Cgj-L9-dlM"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="IHa-u2-lDW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Yk-1j-Vfq" secondAttribute="bottom" constant="10" id="J8b-aw-YTT"/>
+                            <constraint firstItem="c2z-f7-eXR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="PN1-Of-XQh"/>
+                            <constraint firstItem="9Yk-1j-Vfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Swp-MZ-K7g"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTc-Xs-C4L"/>
                             <constraint firstItem="c2z-f7-eXR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ifF-g4-od4"/>
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifb-wN-RWm"/>
+                            <constraint firstItem="9Yk-1j-Vfq" firstAttribute="leading" secondItem="c2z-f7-eXR" secondAttribute="trailing" constant="10" id="ihW-XM-ulf"/>
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="nNt-4r-7AW"/>
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="wf6-yD-CUv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6NW-ae-QYK"/>
+                                <exclude reference="70L-ld-tC0"/>
+                                <exclude reference="PN1-Of-XQh"/>
+                                <exclude reference="38w-cA-wUp"/>
+                                <exclude reference="Cgj-L9-dlM"/>
+                                <exclude reference="Swp-MZ-K7g"/>
+                                <exclude reference="ihW-XM-ulf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="J8b-aw-YTT"/>
+                                <exclude reference="537-d7-qa3"/>
+                                <include reference="6NW-ae-QYK"/>
+                                <include reference="70L-ld-tC0"/>
+                                <exclude reference="IHa-u2-lDW"/>
+                                <include reference="PN1-Of-XQh"/>
+                                <exclude reference="fTc-Xs-C4L"/>
+                                <include reference="38w-cA-wUp"/>
+                                <include reference="Cgj-L9-dlM"/>
+                                <include reference="Swp-MZ-K7g"/>
+                                <exclude reference="ifb-wN-RWm"/>
+                                <include reference="ihW-XM-ulf"/>
+                                <exclude reference="nNt-4r-7AW"/>
+                                <exclude reference="wf6-yD-CUv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="degreeLabel" destination="vxZ-O9-ebw" id="06v-ZN-w1j"/>
