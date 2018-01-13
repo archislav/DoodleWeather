@@ -19,6 +19,7 @@
 		A5B9F9FD1FE6BEE6005B3978 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9F9FC1FE6BEE6005B3978 /* WeatherService.swift */; };
 		A5B9F9FF1FE6BFCF005B3978 /* WeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9F9FE1FE6BFCF005B3978 /* WeatherConditions.swift */; };
 		A5B9FA011FE6C108005B3978 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9FA001FE6C108005B3978 /* WeatherType.swift */; };
+		A5D7B5A6200A9DA000916865 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7B5A5200A9DA000916865 /* WeatherServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A5B9F9FC1FE6BEE6005B3978 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		A5B9F9FE1FE6BFCF005B3978 /* WeatherConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConditions.swift; sourceTree = "<group>"; };
 		A5B9FA001FE6C108005B3978 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		A5D7B5A5200A9DA000916865 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				A51C9F491FDDB82800DC38F2 /* DoodleWeatherTests.swift */,
 				A51C9F4B1FDDB82800DC38F2 /* Info.plist */,
 				A5B9F9F81FE3F88F005B3978 /* UrlEncoderTests.swift */,
+				A5D7B5A5200A9DA000916865 /* WeatherServiceTests.swift */,
 			);
 			path = DoodleWeatherTests;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				A5B9F9F91FE3F88F005B3978 /* UrlEncoderTests.swift in Sources */,
 				A51C9F4A1FDDB82800DC38F2 /* DoodleWeatherTests.swift in Sources */,
+				A5D7B5A6200A9DA000916865 /* WeatherServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

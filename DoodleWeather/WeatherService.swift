@@ -25,14 +25,12 @@ class WeatherService {
      }*/
     
     func requestWeatherConditions(woeid: Int, successCallback: @escaping (WeatherConditions) -> (), finalizeCallback: @escaping () -> ()) {
-        // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         let request = createWeatherConditionsRequest(for: woeid)
         
         doRequestWeatherConditions(request, successCallback, finalizeCallback)
     }
     
     func requestWeatherConditions(latitude: Double, longitude: Double, successCallback: @escaping (WeatherConditions) -> (), finalizeCallback: @escaping () -> ()) {
-        // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         let request = createWeatherConditionsRequest(latitude: latitude, longitude: longitude)
         
         doRequestWeatherConditions(request, successCallback, finalizeCallback)
@@ -86,10 +84,12 @@ class WeatherService {
     }
     
     private func createWeatherConditionsRequest(latitude: Double, longitude: Double) -> URLRequest {
+        // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid in (SELECT woeid FROM geo.places WHERE text=\"(41.11, 41.11)\")"    -d format=json
         return doCreateWeatherConditionsRequest(woeidWhereConditionString: "woeid in (SELECT woeid FROM geo.places WHERE text=\"(\(latitude), \(longitude))\")")
     }
     
     private func createWeatherConditionsRequest(for woeid: Int) -> URLRequest {
+        // curl https://query.yahooapis.com/v1/public/yql    -d q="select wind from weather.forecast where woeid=2122265"    -d format=json
         return doCreateWeatherConditionsRequest(woeidWhereConditionString: "woeid = \(woeid)")
     }
     
