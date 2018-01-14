@@ -39,6 +39,9 @@ class WeatherServiceTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(resultConditions)
+        XCTAssertEqual(resultConditions.city, "Moscow")
+        
+        //        TODO: check is MOSCOW for city
         
 //        XCTAssertEqual("test%20123", encoder.urlEncode("test 123"))
 //        XCTAssertEqual("test%2B123", encoder.urlEncode("test+123"))

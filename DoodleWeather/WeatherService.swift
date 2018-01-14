@@ -95,7 +95,7 @@ class WeatherService {
     
     private func doCreateWeatherConditionsRequest(woeidWhereConditionString: String) -> URLRequest {
         let parameters: [String: String] = [
-            "q": "select item.condition from weather.forecast where \(woeidWhereConditionString) and u='c'",
+            "q": "select item.condition, location from weather.forecast where \(woeidWhereConditionString) and u='c'",
             "format": "json"
         ]
         
@@ -145,12 +145,14 @@ class WeatherService {
             os_log("Response body: %@", json)
             
             let conditionPath: [String] = ["query", "results", "channel", "item", "condition"]
+            let locationPath: [String] = ["query", "results", "channel", "location"]
             
             let temp = self.getIntFromJson(json, conditionPath, "temp")
             let description = self.getStringFromJson(json, conditionPath, "text")
             let code = self.getIntFromJson(json, conditionPath, "code")
+            let city = self.getStringFromJson(json, locationPath, "city")
             
-            let weatherConditions = WeatherConditions(type: WeatherType.fromCode(code), temperature: temp, description: description)
+            let weatherConditions = WeatherConditions(type: WeatherType.fromCode(code), temperature: temp, description: description, city: city)
             
             return weatherConditions
         } catch let error {

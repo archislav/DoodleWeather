@@ -12,10 +12,12 @@ class WeatherConditions {
     var type: WeatherType
     var temperature: Int
     var description: String
+    var city: String
     
-    init(type: WeatherType, temperature: Int, description: String) {
+    init(type: WeatherType, temperature: Int, description: String, city: String) {
         self.type = type
         self.temperature = temperature
         self.description = description
+        self.city = city
     }
 }
