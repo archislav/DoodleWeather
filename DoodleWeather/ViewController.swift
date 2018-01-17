@@ -19,6 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherDesctiptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var cityLabel: UILabel!
     var refreshControl: UIRefreshControl!
     
     // MARK: services
@@ -98,17 +99,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private func setWeatherConditions(_ weatherConditions: WeatherConditions) {
         setWeatherConditionsComponents(degreeText: "\(weatherConditions.temperature)° C",
             weatherDescription: weatherConditions.description,
-            imageName: weatherConditions.type.getImageName())
+            imageName: weatherConditions.type.getImageName(),
+            city: weatherConditions.city)
     }
     
     private func clearWeatherConditions() {
-        setWeatherConditionsComponents(degreeText: "", weatherDescription: "", imageName: WeatherType.IMAGE_NAME_UNKNOWN)
+        setWeatherConditionsComponents(degreeText: "", weatherDescription: "", imageName: WeatherType.IMAGE_NAME_UNKNOWN, city: "")
     }
     
-    private func setWeatherConditionsComponents(degreeText: String, weatherDescription: String, imageName: String) {
+    private func setWeatherConditionsComponents(degreeText: String, weatherDescription: String, imageName: String, city: String) {
         self.degreeLabel?.text = degreeText
         self.weatherDesctiptionLabel?.text = weatherDescription
         self.imageView?.image = UIImage(named: imageName)
+        self.cityLabel?.text = city
     }
     
     fileprivate func setupPullToRefresh() {
