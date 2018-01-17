@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Yk-1j-Vfq" userLabel="WeatherInfoView">
-                                <rect key="frame" x="10" y="302.5" width="300" height="255.5"/>
+                                <rect key="frame" x="10" y="292.5" width="300" height="255.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxU-e4-1ji" userLabel="CityLabel">
                                         <rect key="frame" x="145.5" y="0.0" width="9" height="48"/>
@@ -64,7 +64,7 @@
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="WIt-tB-AvN"/>
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-20" id="Wyi-r0-cYM"/>
                             <constraint firstItem="nKy-J6-fei" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="lqd-ae-lFb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Yk-1j-Vfq" secondAttribute="bottom" constant="10" id="tcx-6Z-9Vq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Yk-1j-Vfq" secondAttribute="bottom" constant="20" id="tcx-6Z-9Vq"/>
                             <constraint firstItem="nKy-J6-fei" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="umD-Gv-N8F"/>
                             <constraint firstItem="9Yk-1j-Vfq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-20" id="wGV-uT-vzc"/>
                             <constraint firstItem="nKy-J6-fei" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="yfL-af-u7r"/>
@@ -72,24 +72,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Cvu-QB-df0"/>
-                                <exclude reference="WIt-tB-AvN"/>
-                                <exclude reference="wGV-uT-vzc"/>
                                 <exclude reference="AuP-yT-2hW"/>
                                 <exclude reference="QqU-ys-f3W"/>
                                 <exclude reference="VJz-u4-caJ"/>
                                 <exclude reference="yfL-af-u7r"/>
+                                <exclude reference="Cvu-QB-df0"/>
+                                <exclude reference="WIt-tB-AvN"/>
+                                <exclude reference="wGV-uT-vzc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <exclude reference="tcx-6Z-9Vq"/>
-                                <include reference="Cvu-QB-df0"/>
-                                <exclude reference="Fse-62-rkr"/>
-                                <exclude reference="Ob4-ML-D5F"/>
-                                <include reference="WIt-tB-AvN"/>
-                                <exclude reference="Wyi-r0-cYM"/>
-                                <include reference="wGV-uT-vzc"/>
                                 <exclude reference="1Gx-Zq-44U"/>
                                 <include reference="AuP-yT-2hW"/>
                                 <exclude reference="MGk-yj-PsP"/>
@@ -97,6 +91,12 @@
                                 <include reference="VJz-u4-caJ"/>
                                 <exclude reference="umD-Gv-N8F"/>
                                 <include reference="yfL-af-u7r"/>
+                                <include reference="Cvu-QB-df0"/>
+                                <exclude reference="Fse-62-rkr"/>
+                                <exclude reference="Ob4-ML-D5F"/>
+                                <include reference="WIt-tB-AvN"/>
+                                <exclude reference="Wyi-r0-cYM"/>
+                                <include reference="wGV-uT-vzc"/>
                             </mask>
                         </variation>
                     </view>
