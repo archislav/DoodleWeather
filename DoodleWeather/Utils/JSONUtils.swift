@@ -14,22 +14,21 @@ class JSONUtils {
     }
     
     static func getIntFromJson(_ json: [String: Any], _ path: [String], _ field: String) -> Int {
-        // todo: refactor
-        var currJson : [String: Any] = json
-        for pathField in path {
-            currJson = currJson[pathField] as! [String: Any]
-        }
-        
-        return Int(currJson[field] as! String)!
+        let jsonForPath = getJson(json, path)
+        return Int(jsonForPath[field] as! String)!
     }
     
     static func getStringFromJson(_ json: [String: Any], _ path: [String], _ field: String) -> String {
-        // todo: refactor
+        let jsonForPath = getJson(json, path)
+        return jsonForPath[field] as! String
+    }
+    
+    private static func getJson(_ json: [String: Any], _ path: [String]) -> [String: Any] {
         var currJson : [String: Any] = json
         for pathField in path {
             currJson = currJson[pathField] as! [String: Any]
         }
         
-        return currJson[field] as! String
+        return currJson
     }
 }
