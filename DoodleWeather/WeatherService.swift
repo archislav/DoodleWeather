@@ -12,17 +12,13 @@
     class WeatherService {
         
         static let MOSCOW_WOEID = 2122265
+        static let YAHOO_WEATHER_API_URL = "https://query.yahooapis.com/v1/public/yql"
         
         static let shared = WeatherService()
         
         private init() {
             
         }
-        
-        /*func requestWeatherConditions(woeid: Int, callback: (WeatherConditions) -> ()) {
-         let a = WeatherConditions(type: WeatherType.cloudy, temperature: 2, description: "Test")
-         callback(a)
-         }*/
         
         func requestWeatherConditions(woeid: Int, successCallback: @escaping (WeatherConditions) -> (), finalizeCallback: @escaping () -> ())   {
             let parameters = createWeatherConditionsParameters(for: woeid)
@@ -37,7 +33,7 @@
         }
         
         fileprivate func doRequestWeatherConditions(_ parameters: [String: String], _ successCallback: @escaping (WeatherConditions) -> (), _ finalizeCallback: @escaping () -> ()) {
-            HTTPUtils.executePOSTRequest(url: "https://query.yahooapis.com/v1/public/yql", with: parameters, completionHandler: { data, response, error in
+            HTTPUtils.executePOSTRequest(url: WeatherService.YAHOO_WEATHER_API_URL, with: parameters, completionHandler: { data, response, error in
                 if let weatherConditions = self.handleWeatherConditionsResponse(data, response, error) {
                     successCallback(weatherConditions)
                 }
@@ -73,7 +69,7 @@
             
             if let httpResponse = response as? HTTPURLResponse {
                 let statusCode = httpResponse.statusCode
-                guard statusCode == 200 else {
+                guard statusCode == HTTPUtils.STATUS_CODE_OK else {
                     os_log("Got response status code: %d", type: .error, statusCode)
                     return nil
                 }

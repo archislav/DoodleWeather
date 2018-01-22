@@ -11,6 +11,8 @@ import os.log
 
 class HTTPUtils {
     
+    static let STATUS_CODE_OK = 200
+    
     private init() {
         //        незачем создавать инстансы
     }
