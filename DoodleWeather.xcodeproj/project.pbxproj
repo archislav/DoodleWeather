@@ -99,7 +99,7 @@
 				A51C9F3B1FDDB82700DC38F2 /* Assets.xcassets */,
 				A51C9F3D1FDDB82700DC38F2 /* LaunchScreen.storyboard */,
 				A51C9F401FDDB82800DC38F2 /* Info.plist */,
-				A5B9F9F61FE3F648005B3978 /* UrlEncoder.swift */,
+				A53A73062016666D00506F5A /* Utils */,
 				A5B9F9FC1FE6BEE6005B3978 /* WeatherService.swift */,
 				A5B9F9FE1FE6BFCF005B3978 /* WeatherConditions.swift */,
 				A5B9FA001FE6C108005B3978 /* WeatherType.swift */,
@@ -116,6 +116,14 @@
 				A5D7B5A5200A9DA000916865 /* WeatherServiceTests.swift */,
 			);
 			path = DoodleWeatherTests;
+			sourceTree = "<group>";
+		};
+		A53A73062016666D00506F5A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A5B9F9F61FE3F648005B3978 /* UrlEncoder.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A54B0E151FF0282F00786285 /* Frameworks */ = {
